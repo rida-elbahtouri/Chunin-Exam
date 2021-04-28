@@ -24,7 +24,11 @@ nav {
     }
     
 }
-
+.notfound {
+    font-size: 48px;
+    text-align: center;
+    color: red;
+}
 .mygrid {
     display: grid;
     grid-template-columns: 2fr 1fr;

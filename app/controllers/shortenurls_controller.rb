@@ -12,19 +12,19 @@ class ShortenurlsController < ApplicationController
         while Shortenurl.find_by(shortUrl: shortUrl) do
             shortUrl = generate_shorturl()
         end
-        @newurl = Shortenurl.new(originalUrl: url,shortUrl: shortUrl)
-        if @newurl.save
+        newurl = Shortenurl.new(originalUrl: url,shortUrl: shortUrl)
+        if newurl.save
             render json: {shortUrl: shortUrl}
         end
     end
    
     def goto
-        @orurl = Shortenurl.find_by(shortUrl: params[:url])
+        orurl = Shortenurl.find_by(shortUrl: params[:url])
         
-        if @orurl
-            redirect_to(URI.escape(@orurl.originalUrl))
+        if orurl
+            redirect_to(URI.escape(orurl.originalUrl))
         else
-            #render 404
+            render "shortenurls/notfound"
         end
     end
 end
