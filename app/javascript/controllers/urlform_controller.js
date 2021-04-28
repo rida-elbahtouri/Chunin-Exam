@@ -4,11 +4,13 @@ export default class extends Controller {
     static targets = ['originalUrl', 'shortUrl','error'];
     checkAndSubmit(e){
         const targetValue = this.originalUrlTarget.value
+        this.clear() 
         if(this.validURL(targetValue)){
             this.post(targetValue)
         }
         else
         {
+            this.errorTarget.className = "error"
             this.errorTarget.innerHTML  = 'it seems that the Url is incorrect'
         }
     }
@@ -21,7 +23,13 @@ export default class extends Controller {
           '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
         return !!pattern.test(str);
       }
-
+      clear() {
+        this.shortUrlTarget.className = "hidden"
+        this.shortUrlTarget.innerHTML  = ''
+        this.errorTarget.className = "hidden"
+            this.errorTarget.innerHTML  = ''
+      
+      }
       async post(orurl){
         const rawResponse = await fetch('/shortenurls/', {
             method: 'POST',
@@ -32,6 +40,7 @@ export default class extends Controller {
             body: JSON.stringify({originalUrl: orurl})
         });
         const content = await rawResponse.json();
+        this.shortUrlTarget.className = "mylink"
         this.shortUrlTarget.innerHTML  = `http://127.0.0.1:3000/${content.shortUrl}`
     }
   }
