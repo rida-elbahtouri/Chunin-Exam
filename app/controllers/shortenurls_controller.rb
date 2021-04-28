@@ -22,6 +22,8 @@ class ShortenurlsController < ApplicationController
         orurl = Shortenurl.find_by(shortUrl: params[:url])
         
         if orurl
+            orurl.visits = orurl.visits + 1
+            orurl.save
             redirect_to(URI.escape(orurl.originalUrl))
         else
             render "shortenurls/notfound"

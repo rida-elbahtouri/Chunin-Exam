@@ -2,11 +2,13 @@
     <div class="mygrid table-title">
         <p>Original Url</p>
         <p>Short Url</p>
+        <p>visits</p>
     </div>
     <% @urls.each do |url| %>
     <div class="urls_table mygrid">
         <p> <%= url.originalUrl %> </p>
         <p> http://127.0.0.1:3000/<%= url.shortUrl %> </p>
+        <p> <%= url.visits %> </p>
     </div>
     <% end %>
 </div>
