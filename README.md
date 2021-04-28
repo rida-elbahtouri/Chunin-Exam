@@ -1,100 +1,94 @@
-# Helpjuice Chunin Exam
+# Shorten Url
 
-Welcome to the Helpjuice code challenge. This repository includes a new Rails app used for assessment and testing purposes only.
+this repo is a Ruby on Rails application that allows users to create short URLs for their long ones to make it easier to save them.
 
-## Context
+## Built With
 
-[Helpjuice](https://www.helpjuice.com/) provides a reasonable overview and description of who are we and what we do.
+- Ruby 2.6.5
+- Rails 6.1.3
+- Stimulus
+- Rspec
+- Capybara
+- Html5
+- Sass
+- Shoulda Matchers
 
-Helpjuice empowers large and small companies (such as Amazon.com, Hertz, Virgin Mobile, Shipt.com, Philips, US Government, and thousands of others) to deliver instant support using our software.
+## Screenshot
 
-We're a smaller, yet growing software company, where everyone wears multiple hats. It's a team of excellent people, who are all willing to help each other because it's the way we work / our culture.
+![screenshot1](app/assets/images/shorturl.png)
 
-We care about our customers and are a very transparent company in how we build software (e.g.: our product roadmap is public & customer-driven)
-
+![screenshot2](app/assets/images/indexpage.png)
 
 ## Getting Started
 
-```bash
-# Start your Rails server
-rails server
+To get a local copy up and running follow these simple example steps.
 
-# In a separate tab
-bin/webpack-dev-server
+### Prerequisites
+
+- Ruby 2.6.5
+- Rails 6.1.3
+
+[Chromdriver](https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver)
+
+### Clone the Project
+
+```
+$ git clone https://github.com/rida-elbahtouri/Chunin-Exam.git
+
+$ cd Chunin-Exam
 ```
 
-## Tasks
+### Setup
 
-### 1. Build a URL shoretner app
+Instal gems with:
 
-A URL shortener is an online application that converts a regular URL into its condensed format.
+```
+bundle install
+```
 
-The user only has to copy the full URL of a website and paste it into the URL shortening tool to come up with an abbreviated version that is around 10 to 20 characters long.
+Setup database with:
 
-Example:
+```
+   rails db:migrate
+```
 
-Regular URL - http://www.nytimes.com/2012/08/09/us/more-casinos-and-internet-gambling-threaten-shakopee-tribe.html?_r=1&hp
+### Usage
 
-Shortened URL - http://`your-domain`/P7eg6B
+Start server with:
 
-Shortened URL then redirects to the original URL.
+```
+    rails server
+```
 
-**Plus points for challengers are able to track as much of analytics as possible!**
+Open `http://localhost:3000/` in your browser.
 
-### 2. Stimulus
+Click on new Url from nav to create Short Url
 
-Install and use stimulus to show off some of that JavaScript magic.
+click Home to see list of all Urls
 
-Please try to put as much of your JavaScript into Stimulus controllers as possible!
+# Testing
 
-### 3. Specs
+To run the testing, you need to have ChromeDriver installed in your environment.
+Run one of this commands respected to your system:
 
-Install and configure RSpec and Capybara to test your coode.
+```
+Mac users with Homebrew installed: brew tap homebrew/cask && brew cask install chromedriver
+Debian based Linux distros: sudo apt-get install chromium-chromedriver
+Windows users with Chocolatey installed: choco install chromedriver
 
-**Plus points for challengers with best code coverage!**
+```
 
-### 4. Write documentation
+Now you can run the testing using this command:
 
-Rewrite this readme to describe your app and explain your approuch. Give as much info to the reviewers as possible!
+```
+rspec
 
-## Tips
+```
 
-- Submit your PR as you would in a professional environment
-- Keep your commit history and your diffs clean
-- Try to write clean code
+## Developer
 
-## How do I submit a Pull Request?
+👤 **Rida Elbahtouri**
 
-Since this a public repository, submitting a Pull Request will not be the same as when you're a collaborator. The instructions below will help you push the changes to the repo.
-
-- Fork the project to your personal Github.
-- Clone the challenge to your local from your new forked repo in your personal git account.
-
-  ```
-    git clone <forked account>
-
-    example: git clone https://github.com/EmirVatric/Chunin-Exam
-  ```
-
-- Any changes made in the original repository should not be synced to your forked repository. The following commands enable us to track the original repository as a remote of the fork.
-
-   ```
-     git remote add --track master upstream https://github.com/EmirVatric/Chunin-Exam.git
-     git fetch upstream
-   ```
-
-- Create a new branch for your changes.
-
-   ```
-    git checkout -b <your-branch-name> upstream/master
-   ```
-
-- Make your changes, stage, and commit files necessary.
-- Push the changes to remote.
-
-  ```
-   git push -u origin <your-branch-name> origin
-  ```
-
-- You can now go to Github, and submit a PR with necessary details.
-- Happy Coding! Please don't hesitate to shoot an email to the recruitment team if you have any issues while pushing the code.
+- [Github](https://github.com/rida-elbahtouri)
+- [Twitter](https://twitter.com/RElbahtouri)
+- [Linkedin](https://www.linkedin.com/in/rida-elbahtouri/)
