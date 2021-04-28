@@ -1,10 +1,18 @@
 class ShortenurlsController < ApplicationController
+    
+    def index
+        @urls = Shortenurl.all
+    end
     def new
         @shortenurl = Shortenurl.new
     end
     def create
         url =  params[:shortenurl][:originalUrl]
-        @newurl = Shortenurl.new(originalUrl: url,shortUrl: generate_shorturl())
+        shortUrl = generate_shorturl()
+        while Shortenurl.find_by(shortUrl: shortUrl) do
+            shortUrl = generate_shorturl()
+        end
+        @newurl = Shortenurl.new(originalUrl: url,shortUrl: shortUrl)
         if @newurl.save
             flash[:success] = "short url has been created"
         end

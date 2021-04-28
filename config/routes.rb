@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :shortenurls
 
   get '/:url', to: 'shortenurls#goto', param: :slug
+  get '/', to: 'shortenurls#index'
 end
