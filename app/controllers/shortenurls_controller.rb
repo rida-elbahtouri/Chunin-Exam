@@ -1,5 +1,5 @@
 class ShortenurlsController < ApplicationController
-    
+    skip_before_action :verify_authenticity_token
     def index
         @urls = Shortenurl.all
     end
@@ -14,7 +14,7 @@ class ShortenurlsController < ApplicationController
         end
         @newurl = Shortenurl.new(originalUrl: url,shortUrl: shortUrl)
         if @newurl.save
-            flash[:success] = "short url has been created"
+            render json: {shortUrl: shortUrl}
         end
     end
    
