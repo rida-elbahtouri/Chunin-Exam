@@ -1,20 +1,16 @@
 import {Controller} from "stimulus"
 
 export default class extends Controller {
-    static targets = ['originalUrl', 'shortUrl'];
+    static targets = ['originalUrl', 'shortUrl','error'];
     checkAndSubmit(e){
         const targetValue = this.originalUrlTarget.value
         if(this.validURL(targetValue)){
-            // call function
             this.post(targetValue)
         }
         else
         {
-            //return error
+            this.errorTarget.innerHTML  = 'it seems that the Url is incorrect'
         }
-        
-
-        console.log()
     }
     validURL(str) {
         let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
@@ -37,6 +33,5 @@ export default class extends Controller {
         });
         const content = await rawResponse.json();
         this.shortUrlTarget.innerHTML  = `http://127.0.0.1:3000/${content.shortUrl}`
-        console.log(content);
     }
   }

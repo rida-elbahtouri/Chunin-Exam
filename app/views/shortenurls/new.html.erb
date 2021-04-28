@@ -1,16 +1,12 @@
-<%
-=begin%>
-<%= form_for @shortenurl do |f| %>
-<%= f.label "Url"%><br />
-<%= f.text_field :originalUrl %><br />
-<%= f.submit "Create" %>
-<% end %>
-<%
-=end%>
+<div class="form-container" data-controller="urlform">
+    <p class="error" data-target="urlform.error"></p>
+    <div class="form">
+        <label for="originalUrl">Original Url:</label>
+        <input data-target="urlform.originalUrl" type="text" id="originalUrl">
+        <button data-action="click->urlform#checkAndSubmit">
+            Create
+        </button>
 
-<form data-controller="urlform">
-    <label for="originalUrl">Original Url:</label>
-    <input data-target="urlform.originalUrl" type="text" id="originalUrl">
-    <input data-action="click->urlform#checkAndSubmit" type="button" value="Create">
-    <p data-target="urlform.shortUrl"></p>
-</form>
+    </div>
+    <p class="mylink" data-target="urlform.shortUrl"></p>
+</div>
