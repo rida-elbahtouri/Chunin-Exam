@@ -1,6 +1,12 @@
-<% @urls.each do |url| %>
-<div>
-    <p> <%= url.originalUrl %> </p>
-    <p> http://127.0.0.1:3000/<%= url.shortUrl %> </p>
+<div class="table-container">
+    <div class="mygrid table-title">
+        <p>Original Url</p>
+        <p>Short Url</p>
+    </div>
+    <% @urls.each do |url| %>
+    <div class="urls_table mygrid">
+        <p> <%= url.originalUrl %> </p>
+        <p> http://127.0.0.1:3000/<%= url.shortUrl %> </p>
+    </div>
+    <% end %>
 </div>
-<% end %>
