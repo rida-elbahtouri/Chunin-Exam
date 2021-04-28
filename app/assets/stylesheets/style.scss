@@ -1,3 +1,28 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+nav {
+
+    background-color: #caf0f8;
+    margin-bottom: 10px;
+    .content {
+        max-width: 1000px;
+        margin: 0 auto;
+       padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size:24px;
+
+     a {
+         text-decoration: none;
+         color:rgb(0, 0, 0);
+     } 
+    }
+    
+}
+
+
 p {
     margin: 0;
 }

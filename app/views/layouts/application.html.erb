@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>HelpjuiceChallenge</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -8,9 +9,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
+<body>
+    <nav>
+        <div class="content">
+            <%= link_to "Home", home_path  %>
+            <%= link_to "New Url", new_shortenurl_path %>
+        </div>
+    </nav>
     <%= yield %>
-  </body>
+</body>
+
 </html>
