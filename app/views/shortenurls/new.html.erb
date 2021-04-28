@@ -1,5 +1,15 @@
+<%
+=begin%>
 <%= form_for @shortenurl do |f| %>
 <%= f.label "Url"%><br />
 <%= f.text_field :originalUrl %><br />
 <%= f.submit "Create" %>
 <% end %>
+<%
+=end%>
+
+<form data-controller="urlform">
+    <label for="originalUrl">Original Url:</label>
+    <input data-target="urlform.originalUrl" type="text" id="originalUrl">
+    <input data-action="click->urlform#checkAndSubmit" type="button" value="Create">
+</form>
